@@ -30,6 +30,11 @@ namespace Sixty_Editor_DLL
         public IConstantInfo[] Constants { get { return constants.ToArray(); } }
         public IMethodInfo[] Methods { get { return methods.ToArray(); } }
 
+        public Expression(T value) : this(value, "")
+        {
+
+        }
+
         public Expression(T value, string name)
         {
             BaseValue = value.ToString();

@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sixty_Editor_DLL</RootNamespace>
-    <AssemblyName>Sixty Editor</AssemblyName>
+    <AssemblyName>Sixty Editor DLL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -36,7 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MathSE.cs" />
+    <Compile Include="Nodes\Actions\Action.cs" />
     <Compile Include="Nodes\Expressions\Types\Boolean.cs" />
+    <Compile Include="Nodes\Expressions\Types\None.cs" />
+    <Compile Include="Nodes\Expressions\Types\Null.cs" />
     <Compile Include="Nodes\Expressions\Types\Operator.cs" />
     <Compile Include="Nodes\Methods\Types\Logic\And.cs" />
     <Compile Include="Nodes\Methods\Types\Math\Abs.cs" />
