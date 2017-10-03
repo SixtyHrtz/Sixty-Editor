@@ -37,10 +37,13 @@
   <ItemGroup>
     <Compile Include="MathSE.cs" />
     <Compile Include="Nodes\Actions\Action.cs" />
+    <Compile Include="Nodes\Actions\Types\DoNothing.cs" />
+    <Compile Include="Nodes\Actions\Types\Wait.cs" />
     <Compile Include="Nodes\Expressions\Types\Boolean.cs" />
-    <Compile Include="Nodes\Expressions\Types\None.cs" />
+    <Compile Include="Nodes\Expressions\Types\Float.cs" />
     <Compile Include="Nodes\Expressions\Types\Null.cs" />
     <Compile Include="Nodes\Expressions\Types\Operator.cs" />
+    <Compile Include="Nodes\Expressions\Types\String.cs" />
     <Compile Include="Nodes\Methods\Types\Logic\And.cs" />
     <Compile Include="Nodes\Methods\Types\Math\Abs.cs" />
     <Compile Include="Nodes\Methods\Types\Math\Arithmetic.cs" />

@@ -1,17 +1,7 @@
 ﻿namespace Sixty_Editor_DLL
 {
-    public class Action : Method<None>
+    public abstract class Action : Method<Null>
     {
-        public override string Template { get { return ""; } }
 
-        public Action()
-        {
-
-        }
-
-        public override IExpression Evaluate()
-        {
-            return null;
-        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sixty_Editor_DLL
 {
-    public abstract class Method<T> : IMethod
+    public abstract class Method<T> : IMethod where T : IExpression
     {
         private Dictionary<string, IExpression> expressions;
 

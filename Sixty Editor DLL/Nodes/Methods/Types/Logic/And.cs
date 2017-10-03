@@ -2,10 +2,10 @@
 {
     public class And : Method<Boolean>
     {
-        public override string Template { get { return "И(@A, @B)"; } }
+        public override string Template { get { return "And(@a, @b)"; } }
 
-        private Boolean a = new Boolean(name: "A");
-        private Boolean b = new Boolean(name: "B");
+        private Boolean a = new Boolean(name: "a");
+        private Boolean b = new Boolean(name: "b");
 
         public And()
         {
