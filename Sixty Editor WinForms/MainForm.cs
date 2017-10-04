@@ -7,7 +7,7 @@ namespace Sixty_Editor_WinForms
 {
     public partial class MainForm : Form
     {
-        private Action action;
+        private IAction action;
 
         private List<LinkLabel> actionLinkList;
 
@@ -18,7 +18,7 @@ namespace Sixty_Editor_WinForms
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {
-            action = new Wait();
+            action = new DisplayMessage();
 
             actionLinkList = new List<LinkLabel>();
 
@@ -55,7 +55,7 @@ namespace Sixty_Editor_WinForms
         {
             await Task.Run(() =>
             {
-                action.Evaluate();
+                action.Execute();
             });
         }
     }

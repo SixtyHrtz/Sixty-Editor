@@ -4,9 +4,9 @@
     {
         public override string Template { get { return "DoNothing"; } }
 
-        public override IExpression Evaluate()
+        public override void Execute()
         {
-            return null;
+
         }
     }
 }

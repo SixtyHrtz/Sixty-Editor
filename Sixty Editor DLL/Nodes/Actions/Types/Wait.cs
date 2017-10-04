@@ -13,10 +13,9 @@ namespace Sixty_Editor_DLL
             SetExpressions(a);
         }
 
-        public override IExpression Evaluate()
+        public override void Execute()
         {
             Task.Delay((int)(a * 1000)).Wait();
-            return null;
         }
     }
 }
