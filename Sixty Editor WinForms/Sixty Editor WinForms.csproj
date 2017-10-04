@@ -7,7 +7,7 @@
     <ProjectGuid>{B1E83F8A-98B6-4284-8C9E-B6C1911C5441}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Sixty_Editor_WinForms</RootNamespace>
-    <AssemblyName>Sixty Editor</AssemblyName>
+    <AssemblyName>Sixty Editor WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayMessage.cs" />
     <Compile Include="ExpressionForm.cs">
       <SubType>Form</SubType>
     </Compile>

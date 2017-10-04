@@ -6,21 +6,21 @@ using System.Windows.Forms;
 
 namespace Sixty_Editor_WinForms
 {
-    // TODO : Создание и работа констант схожим с методами образом
-    // TODO : Создание методов и констант один раз, потом брать ссылки
-    // TODO : Сброс метода или значения в зависимости от типа при выходе
+    // TODO : Создание и работа констант схожим с функциями образом
+    // TODO : Создание функций и констант один раз, потом брать ссылки
+    // TODO : Сброс функции или значения в зависимости от типа при выходе
 
     public partial class ExpressionForm : Form
     {
         private IExpression expression;
-        private IMethod method;
+        private IFunction function;
 
-        private List<LinkLabel> methodLinkList;
+        private List<LinkLabel> functionLinkList;
 
         public ExpressionForm(IExpression expression)
         {
             InitializeComponent();
-            methodLinkList = new List<LinkLabel>();
+            functionLinkList = new List<LinkLabel>();
 
             this.expression = expression;
 
@@ -37,12 +37,12 @@ namespace Sixty_Editor_WinForms
                 cbConstant.Visible = false;
                 rbConstant.Visible = false;
             }
-            if (!expression.AllowedExpressionType.HasFlag(ExpressionType.Method))
+            if (!expression.AllowedExpressionType.HasFlag(ExpressionType.Function))
             {
-                cbMethod.Visible = false;
-                rbMethod.Visible = false;
-                lMethod.Visible = false;
-                flpMethod.Visible = false;
+                cbFunction.Visible = false;
+                rbFunction.Visible = false;
+                lFunction.Visible = false;
+                flpFunction.Visible = false;
             }
             if (!expression.AllowedExpressionType.HasFlag(ExpressionType.Value))
             {
@@ -56,7 +56,7 @@ namespace Sixty_Editor_WinForms
             switch (expression.ExpressionType)
             {
                 case ExpressionType.Constant: rbConstant.Checked = true; break;
-                case ExpressionType.Method: rbMethod.Checked = true; break;
+                case ExpressionType.Function: rbFunction.Checked = true; break;
                 case ExpressionType.Value: rbValue.Checked = true; break;
             }
         }
@@ -69,11 +69,11 @@ namespace Sixty_Editor_WinForms
                 if (cbConstant.Items.Count != 0)
                     cbConstant.SelectedIndex = 0;
             }
-            if (expression.AllowedExpressionType.HasFlag(ExpressionType.Method))
+            if (expression.AllowedExpressionType.HasFlag(ExpressionType.Function))
             {
-                cbMethod.Items.AddRange(expression.Methods);
-                if (cbMethod.Items.Count != 0)
-                    cbMethod.SelectedIndex = 0;
+                cbFunction.Items.AddRange(expression.Functions);
+                if (cbFunction.Items.Count != 0)
+                    cbFunction.SelectedIndex = 0;
             }
         }
 
@@ -84,10 +84,10 @@ namespace Sixty_Editor_WinForms
                 case ExpressionType.Constant:
                     cbConstant.SelectedItem = expression.Constants.First(x => x.Value == expression.BaseValue);
                     break;
-                case ExpressionType.Method:
-                    cbMethod.SelectedItem = expression.Methods.First(x => x.Type == method.Type);
-                    method = expression.Method;
-                    CreateMethodControls();
+                case ExpressionType.Function:
+                    cbFunction.SelectedItem = expression.Functions.First(x => x.Type == function.Type);
+                    function = expression.Function;
+                    CreateFunctionControls();
                     break;
                 case ExpressionType.Value:
                     tbValue.Text = expression.BaseValue;
@@ -95,48 +95,48 @@ namespace Sixty_Editor_WinForms
             }
         }
 
-        private void MethodSelectedIndexChanged(object sender, EventArgs e)
+        private void FunctionSelectedIndexChanged(object sender, EventArgs e)
         {
-            method = ((IMethodInfo)cbMethod.SelectedItem).GetMethod();
-            CreateMethodControls();
+            function = ((IFunctionInfo)cbFunction.SelectedItem).GetFunction();
+            CreateFunctionControls();
         }
 
-        private void CreateMethodControls()
+        private void CreateFunctionControls()
         {
-            foreach (LinkLabel link in methodLinkList)
+            foreach (LinkLabel link in functionLinkList)
                 link.Dispose();
-            methodLinkList.Clear();
+            functionLinkList.Clear();
 
-            foreach (IExpression expression in method.Expressions)
+            foreach (IExpression expression in function.Expressions)
             {
                 LinkLabel link = new LinkLabel()
                 {
-                    Parent = flpMethod,
+                    Parent = flpFunction,
                     Tag = expression
                 };
 
                 link.Click += (se, ea) =>
                 {
                     ShowSubForm(expression);
-                    UpdateMethodInfo();
+                    UpdateFunctionInfo();
                 };
 
-                methodLinkList.Add(link);
+                functionLinkList.Add(link);
             }
 
-            UpdateMethodInfo();
+            UpdateFunctionInfo();
         }
 
-        private void UpdateMethodInfo()
+        private void UpdateFunctionInfo()
         {
-            foreach (LinkLabel link in methodLinkList)
+            foreach (LinkLabel link in functionLinkList)
             {
                 link.Text = ((IExpression)link.Tag).ToString();
                 link.Width = Helper.GetTextWidth(link.Text);
             }
 
-            lMethod.Text = method.Inspect();
-            rbMethod.Checked = true;
+            lFunction.Text = function.Inspect();
+            rbFunction.Checked = true;
         }
 
         public static void ShowSubForm(IExpression expression)
@@ -163,10 +163,10 @@ namespace Sixty_Editor_WinForms
                 expression.BaseValue = ((IConstantInfo)cbConstant.SelectedItem).Value;
                 expression.ExpressionType = ExpressionType.Constant;
             }
-            else if (rbMethod.Checked)
+            else if (rbFunction.Checked)
             {
-                expression.Method = method;
-                expression.ExpressionType = ExpressionType.Method;
+                expression.Function = function;
+                expression.ExpressionType = ExpressionType.Function;
             }
             else if (rbValue.Checked)
             {

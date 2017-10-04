@@ -4,7 +4,7 @@
     {
         public override ExpressionType AllowedExpressionType
         {
-            get { return ExpressionType.Constant | ExpressionType.Value | ExpressionType.Method; }
+            get { return ExpressionType.Constant | ExpressionType.Function | ExpressionType.Value; }
         }
 
         public override string BaseValue
@@ -15,7 +15,7 @@
 
         public Boolean(bool value = false, string name = "") : base(value, name)
         {
-            AddMethod(new MethodInfo<And>("И"));
+            AddFunction(new FunctionInfo<And>("И"));
         }
 
         public static implicit operator Boolean(bool value)

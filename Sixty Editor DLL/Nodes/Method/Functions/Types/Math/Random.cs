@@ -1,11 +1,11 @@
 ﻿namespace Sixty_Editor_DLL
 {
-    public class Random : Method<Integer>
+    public class Random : Function<Integer>
     {
-        public override string Template { get { return "Случайное(@A, @B)"; } }
+        public override string Template { get { return "Random(@a, @b)"; } }
 
-        private Integer a = new Integer(name: "A");
-        private Integer b = new Integer(name: "B");
+        private Integer a = new Integer(name: "a");
+        private Integer b = new Integer(name: "b");
 
         public Random()
         {

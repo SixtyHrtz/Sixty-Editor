@@ -1,21 +1,21 @@
 ﻿namespace Sixty_Editor_DLL
 {
-    public class Arithmetic : Method<Integer>
+    public class Arithmetic : Function<Integer>
     {
-        public override string Template { get { return "(@A @OP @B)"; } }
+        public override string Template { get { return "(@a @sign @b)"; } }
 
-        private Integer a = new Integer(name: "A");
-        private Operator op = new Operator("+", "OP");
-        private Integer b = new Integer(name: "B");
+        private Integer a = new Integer(name: "a");
+        private Operator sign = new Operator("+", "sign");
+        private Integer b = new Integer(name: "b");
 
         public Arithmetic()
         {
-            SetExpressions(a, op, b);
+            SetExpressions(a, sign, b);
         }
 
         public override IExpression Evaluate()
         {
-            switch (op.Evaluate().BaseValue)
+            switch (sign.Evaluate().BaseValue)
             {
                 case "+": return new Integer(a + b);
                 case "-": return new Integer(a - b);

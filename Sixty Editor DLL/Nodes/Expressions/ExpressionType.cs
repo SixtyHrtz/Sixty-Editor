@@ -2,8 +2,9 @@
 {
     public enum ExpressionType : byte
     {
-        Constant = 1,
-        Method = 2,
-        Value = 4
+        None = 1,
+        Constant = 2,
+        Function = 4,
+        Value = 8
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Sixty_Editor_DLL
 {
-    public class Min : Method<Integer>
+    public class Min : Function<Integer>
     {
-        public override string Template { get { return "Минимум(@A, @B)"; } }
+        public override string Template { get { return "Min(@a, @b)"; } }
 
-        private Integer a = new Integer(name: "A");
-        private Integer b = new Integer(name: "B");
+        private Integer a = new Integer(name: "a");
+        private Integer b = new Integer(name: "b");
 
         public Min()
         {
