@@ -1,6 +1,6 @@
 ﻿namespace Sixty_Editor_DLL
 {
-    public class And : Method<Boolean>
+    public class And : Function<Boolean>
     {
         public override string Template { get { return "And(@a, @b)"; } }
 

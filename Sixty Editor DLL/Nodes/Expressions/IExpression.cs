@@ -4,13 +4,13 @@
     {
         string Name { get; set; }
         string BaseValue { get; set; }
-        IMethod Method { get; set; }
+        IFunction Function { get; set; }
 
         ExpressionType ExpressionType { get; set; }
         ExpressionType AllowedExpressionType { get; }
 
         IConstantInfo[] Constants { get; }
-        IMethodInfo[] Methods { get; }
+        IFunctionInfo[] Functions { get; }
 
         IExpression Evaluate();
     }

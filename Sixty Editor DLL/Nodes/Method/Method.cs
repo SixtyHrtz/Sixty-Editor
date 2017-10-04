@@ -3,14 +3,12 @@ using System.Collections.Generic;
 
 namespace Sixty_Editor_DLL
 {
-    public abstract class Method<T> : IMethod where T : IExpression
+    public abstract class Method
     {
         private Dictionary<string, IExpression> expressions;
 
         public string Name { get; set; }
         public Type Type { get { return GetType(); } }
-        public Type ReturnType { get { return typeof(T); } }
-
         public List<IExpression> Expressions
         {
             get { return new List<IExpression>(expressions.Values); }
@@ -22,8 +20,6 @@ namespace Sixty_Editor_DLL
         {
             expressions = new Dictionary<string, IExpression>();
         }
-
-        public abstract IExpression Evaluate();
 
         protected void SetExpressions(params IExpression[] expressions)
         {

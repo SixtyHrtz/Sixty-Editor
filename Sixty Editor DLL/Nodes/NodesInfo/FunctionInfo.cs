@@ -2,20 +2,20 @@
 
 namespace Sixty_Editor_DLL
 {
-    public class MethodInfo<T> : IMethodInfo where T : IMethod, new()
+    public class FunctionInfo<T> : IFunctionInfo where T : IFunction, new()
     {
         public string Name { get; private set; }
         public Type Type { get; private set; }
 
-        public MethodInfo(string name)
+        public FunctionInfo(string name)
         {
             Name = name;
             Type = typeof(T);
         }
 
-        public IMethod GetMethod()
+        public IFunction GetFunction()
         {
-            IMethod method = new T()
+            IFunction method = new T()
             {
                 Name = Name
             };

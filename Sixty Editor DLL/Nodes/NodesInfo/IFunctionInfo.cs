@@ -2,11 +2,11 @@
 
 namespace Sixty_Editor_DLL
 {
-    public interface IMethodInfo
+    public interface IFunctionInfo
     {
         string Name { get; }
         Type Type { get; }
 
-        IMethod GetMethod();
+        IFunction GetFunction();
     }
 }

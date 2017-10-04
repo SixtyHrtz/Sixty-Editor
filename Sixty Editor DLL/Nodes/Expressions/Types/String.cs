@@ -4,7 +4,7 @@
     {
         public override ExpressionType AllowedExpressionType
         {
-            get { return ExpressionType.Constant | ExpressionType.Value | ExpressionType.Method; }
+            get { return ExpressionType.Constant | ExpressionType.Function | ExpressionType.Value; }
         }
 
         public override string BaseValue

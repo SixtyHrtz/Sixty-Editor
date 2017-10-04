@@ -30,10 +30,10 @@
         {
             this.cbConstant = new System.Windows.Forms.ComboBox();
             this.rbConstant = new System.Windows.Forms.RadioButton();
-            this.cbMethod = new System.Windows.Forms.ComboBox();
-            this.rbMethod = new System.Windows.Forms.RadioButton();
-            this.lMethod = new System.Windows.Forms.Label();
-            this.flpMethod = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbFunction = new System.Windows.Forms.ComboBox();
+            this.rbFunction = new System.Windows.Forms.RadioButton();
+            this.lFunction = new System.Windows.Forms.Label();
+            this.flpFunction = new System.Windows.Forms.FlowLayoutPanel();
             this.tbValue = new System.Windows.Forms.TextBox();
             this.bSave = new System.Windows.Forms.Button();
             this.rbValue = new System.Windows.Forms.RadioButton();
@@ -61,39 +61,39 @@
             // 
             // cbMethod
             // 
-            this.cbMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMethod.FormattingEnabled = true;
-            this.cbMethod.Location = new System.Drawing.Point(96, 39);
-            this.cbMethod.Name = "cbMethod";
-            this.cbMethod.Size = new System.Drawing.Size(356, 21);
-            this.cbMethod.TabIndex = 2;
-            this.cbMethod.SelectedIndexChanged += new System.EventHandler(this.MethodSelectedIndexChanged);
+            this.cbFunction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFunction.FormattingEnabled = true;
+            this.cbFunction.Location = new System.Drawing.Point(96, 39);
+            this.cbFunction.Name = "cbMethod";
+            this.cbFunction.Size = new System.Drawing.Size(356, 21);
+            this.cbFunction.TabIndex = 2;
+            this.cbFunction.SelectedIndexChanged += new System.EventHandler(this.FunctionSelectedIndexChanged);
             // 
             // rbMethod
             // 
-            this.rbMethod.AutoSize = true;
-            this.rbMethod.Location = new System.Drawing.Point(12, 40);
-            this.rbMethod.Name = "rbMethod";
-            this.rbMethod.Size = new System.Drawing.Size(57, 17);
-            this.rbMethod.TabIndex = 3;
-            this.rbMethod.Text = "Метод";
-            this.rbMethod.UseVisualStyleBackColor = true;
+            this.rbFunction.AutoSize = true;
+            this.rbFunction.Location = new System.Drawing.Point(12, 40);
+            this.rbFunction.Name = "rbMethod";
+            this.rbFunction.Size = new System.Drawing.Size(57, 17);
+            this.rbFunction.TabIndex = 3;
+            this.rbFunction.Text = "Метод";
+            this.rbFunction.UseVisualStyleBackColor = true;
             // 
             // lMethod
             // 
-            this.lMethod.AutoSize = true;
-            this.lMethod.Location = new System.Drawing.Point(93, 63);
-            this.lMethod.Name = "lMethod";
-            this.lMethod.Size = new System.Drawing.Size(45, 13);
-            this.lMethod.TabIndex = 4;
-            this.lMethod.Text = "lMethod";
+            this.lFunction.AutoSize = true;
+            this.lFunction.Location = new System.Drawing.Point(93, 63);
+            this.lFunction.Name = "lMethod";
+            this.lFunction.Size = new System.Drawing.Size(45, 13);
+            this.lFunction.TabIndex = 4;
+            this.lFunction.Text = "lMethod";
             // 
             // flpMethod
             // 
-            this.flpMethod.Location = new System.Drawing.Point(96, 79);
-            this.flpMethod.Name = "flpMethod";
-            this.flpMethod.Size = new System.Drawing.Size(356, 161);
-            this.flpMethod.TabIndex = 5;
+            this.flpFunction.Location = new System.Drawing.Point(96, 79);
+            this.flpFunction.Name = "flpMethod";
+            this.flpFunction.Size = new System.Drawing.Size(356, 161);
+            this.flpFunction.TabIndex = 5;
             // 
             // tbValue
             // 
@@ -133,10 +133,10 @@
             this.Controls.Add(this.rbValue);
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.tbValue);
-            this.Controls.Add(this.flpMethod);
-            this.Controls.Add(this.lMethod);
-            this.Controls.Add(this.rbMethod);
-            this.Controls.Add(this.cbMethod);
+            this.Controls.Add(this.flpFunction);
+            this.Controls.Add(this.lFunction);
+            this.Controls.Add(this.rbFunction);
+            this.Controls.Add(this.cbFunction);
             this.Controls.Add(this.rbConstant);
             this.Controls.Add(this.cbConstant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -153,10 +153,10 @@
 
         private System.Windows.Forms.ComboBox cbConstant;
         private System.Windows.Forms.RadioButton rbConstant;
-        private System.Windows.Forms.ComboBox cbMethod;
-        private System.Windows.Forms.RadioButton rbMethod;
-        private System.Windows.Forms.Label lMethod;
-        private System.Windows.Forms.FlowLayoutPanel flpMethod;
+        private System.Windows.Forms.ComboBox cbFunction;
+        private System.Windows.Forms.RadioButton rbFunction;
+        private System.Windows.Forms.Label lFunction;
+        private System.Windows.Forms.FlowLayoutPanel flpFunction;
         private System.Windows.Forms.TextBox tbValue;
         private System.Windows.Forms.Button bSave;
         private System.Windows.Forms.RadioButton rbValue;

@@ -2,7 +2,7 @@
 
 namespace Sixty_Editor_DLL
 {
-    public class Abs : Method<Integer>
+    public class Abs : Function<Integer>
     {
         public override string Template { get { return "Abs(@a)"; } }
 

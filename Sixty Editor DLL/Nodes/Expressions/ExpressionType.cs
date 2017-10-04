@@ -4,7 +4,7 @@
     {
         None = 1,
         Constant = 2,
-        Method = 4,
+        Function = 4,
         Value = 8
     }
 }

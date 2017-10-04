@@ -4,7 +4,7 @@
     {
         public override ExpressionType AllowedExpressionType
         {
-            get { return ExpressionType.Constant | ExpressionType.Value | ExpressionType.Method; }
+            get { return ExpressionType.Constant | ExpressionType.Function | ExpressionType.Value; }
         }
 
         public override string BaseValue
@@ -15,10 +15,10 @@
 
         public Integer(int value = 0, string name = "") : base(value, name)
         {
-            AddMethod(new MethodInfo<Arithmetic>("Арифметика"));
-            AddMethod(new MethodInfo<Abs>("Модуль"));
-            AddMethod(new MethodInfo<Min>("Минимум"));
-            AddMethod(new MethodInfo<Random>("Случайное"));
+            AddFunction(new FunctionInfo<Arithmetic>("Арифметика"));
+            AddFunction(new FunctionInfo<Abs>("Модуль"));
+            AddFunction(new FunctionInfo<Min>("Минимум"));
+            AddFunction(new FunctionInfo<Random>("Случайное"));
         }
 
         public static implicit operator Integer(int value)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sixty_Editor_DLL
 {
-    public interface IMethod
+    public interface IFunction
     {
         string Name { get; set; }
         Type Type { get; }

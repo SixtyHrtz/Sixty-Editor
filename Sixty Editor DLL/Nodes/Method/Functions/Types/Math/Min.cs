@@ -1,20 +1,22 @@
-﻿namespace Sixty_Editor_DLL
+﻿using System;
+
+namespace Sixty_Editor_DLL
 {
-    public class Random : Method<Integer>
+    public class Min : Function<Integer>
     {
-        public override string Template { get { return "Random(@a, @b)"; } }
+        public override string Template { get { return "Min(@a, @b)"; } }
 
         private Integer a = new Integer(name: "a");
         private Integer b = new Integer(name: "b");
 
-        public Random()
+        public Min()
         {
             SetExpressions(a, b);
         }
 
         public override IExpression Evaluate()
         {
-            return new Integer(MathSE.Random(a, b));
+            return new Integer(Math.Min(a, b));
         }
     }
 }

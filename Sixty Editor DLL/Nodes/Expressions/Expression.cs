@@ -4,20 +4,20 @@ namespace Sixty_Editor_DLL
 {
     public abstract class Expression<T> : IExpression
     {
-        private IMethod method;
+        private IFunction function;
 
         private ExpressionType expressionType;
 
         private List<IConstantInfo> constants;
-        private List<IMethodInfo> methods;
+        private List<IFunctionInfo> functions;
 
         public string Name { get; set; }
         public T Value { get; set; }
         public abstract string BaseValue { get; set; }
-        public IMethod Method
+        public IFunction Function
         {
-            get { return method; }
-            set { method = value; }
+            get { return function; }
+            set { function = value; }
         }
 
         public ExpressionType ExpressionType
@@ -28,7 +28,7 @@ namespace Sixty_Editor_DLL
         public abstract ExpressionType AllowedExpressionType { get; }
 
         public IConstantInfo[] Constants { get { return constants.ToArray(); } }
-        public IMethodInfo[] Methods { get { return methods.ToArray(); } }
+        public IFunctionInfo[] Functions { get { return functions.ToArray(); } }
 
         public Expression(T value) : this(value, "")
         {
@@ -41,7 +41,7 @@ namespace Sixty_Editor_DLL
             Name = name;
 
             constants = new List<IConstantInfo>();
-            methods = new List<IMethodInfo>();
+            functions = new List<IFunctionInfo>();
 
             SetDefaultExpressionType();
         }
@@ -52,8 +52,8 @@ namespace Sixty_Editor_DLL
                 ExpressionType = ExpressionType.Value;
             else if (AllowedExpressionType.HasFlag(ExpressionType.Constant))
                 ExpressionType = ExpressionType.Constant;
-            else if (AllowedExpressionType == ExpressionType.Method)
-                ExpressionType = ExpressionType.Method;
+            else if (AllowedExpressionType == ExpressionType.Function)
+                ExpressionType = ExpressionType.Function;
         }
 
         protected void AddConstant(IConstantInfo constantInfo)
@@ -61,9 +61,9 @@ namespace Sixty_Editor_DLL
             constants.Add(constantInfo);
         }
 
-        protected void AddMethod(IMethodInfo methodInfo)
+        protected void AddFunction(IFunctionInfo functionInfo)
         {
-            methods.Add(methodInfo);
+            functions.Add(functionInfo);
         }
 
         public IExpression Evaluate()
@@ -73,8 +73,8 @@ namespace Sixty_Editor_DLL
                 case ExpressionType.Constant:
                 case ExpressionType.Value:
                     return this;
-                case ExpressionType.Method:
-                    return method.Evaluate();
+                case ExpressionType.Function:
+                    return function.Evaluate();
                 default:
                     return null;
             }
@@ -87,8 +87,8 @@ namespace Sixty_Editor_DLL
                 case ExpressionType.Constant:
                 case ExpressionType.Value:
                     return BaseValue;
-                case ExpressionType.Method:
-                    return method.Inspect();
+                case ExpressionType.Function:
+                    return function.Inspect();
             }
 
             return "null";
