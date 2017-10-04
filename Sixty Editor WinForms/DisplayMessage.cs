@@ -6,18 +6,18 @@ namespace Sixty_Editor_WinForms
 {
     public class DisplayMessage : Action
     {
-        public override string Template { get { return "DisplayMessage(@msg)"; } }
+        public override string Template { get { return "DisplayMessage(@String)"; } }
 
-        private String msg = new String("message", "msg");
+        private String str = new String("string", "String");
 
         public DisplayMessage()
         {
-            SetExpressions(msg);
+            SetExpressions(str);
         }
 
         public override void Execute()
         {
-            MessageBox.Show(msg);
+            MessageBox.Show(str);
         }
     }
 }

@@ -15,7 +15,8 @@
 
         public String(string value = "", string name = "") : base(value, name)
         {
-
+            AddFunction(new FunctionInfo<ConcatenateStrings>("Concatenate Strings"));
+            AddFunction(new FunctionInfo<Substring>("Substring"));
         }
 
         public static implicit operator String(string value)

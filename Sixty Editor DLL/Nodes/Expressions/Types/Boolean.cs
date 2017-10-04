@@ -15,7 +15,7 @@
 
         public Boolean(bool value = false, string name = "") : base(value, name)
         {
-            AddFunction(new FunctionInfo<And>("И"));
+            AddFunction(new FunctionInfo<And>("And"));
         }
 
         public static implicit operator Boolean(bool value)

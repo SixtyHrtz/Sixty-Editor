@@ -2,19 +2,19 @@
 {
     public class And : Function<Boolean>
     {
-        public override string Template { get { return "And(@a, @b)"; } }
+        public override string Template { get { return "(@Value1 and @Value2)"; } }
 
-        private Boolean a = new Boolean(name: "a");
-        private Boolean b = new Boolean(name: "b");
+        private Boolean value1 = new Boolean(name: "Value1");
+        private Boolean value2 = new Boolean(name: "Value2");
 
         public And()
         {
-            SetExpressions(a, b);
+            SetExpressions(value1, value2);
         }
 
         public override IExpression Evaluate()
         {
-            return new Boolean(a && b);
+            return new Boolean(value1 && value2);
         }
     }
 }

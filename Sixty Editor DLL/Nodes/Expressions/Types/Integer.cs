@@ -15,10 +15,15 @@
 
         public Integer(int value = 0, string name = "") : base(value, name)
         {
-            AddFunction(new FunctionInfo<Arithmetic>("Арифметика"));
-            AddFunction(new FunctionInfo<Abs>("Модуль"));
-            AddFunction(new FunctionInfo<Min>("Минимум"));
-            AddFunction(new FunctionInfo<Random>("Случайное"));
+            AddFunction(new FunctionInfo<Arithmetic>("Arithmetic"));
+            AddFunction(new FunctionInfo<StringLength>("String Length"));
+            AddFunction(new FunctionInfo<FloatToInteger>("Float To Integer"));
+            AddFunction(new FunctionInfo<StringToInteger>("String To Integer"));
+            AddFunction(new FunctionInfo<RandomNumber>("Random Number"));
+            AddFunction(new FunctionInfo<Min>("Min"));
+            AddFunction(new FunctionInfo<Max>("Max"));
+            AddFunction(new FunctionInfo<Abs>("Abs"));
+            AddFunction(new FunctionInfo<Sign>("Sign"));
         }
 
         public static implicit operator Integer(int value)

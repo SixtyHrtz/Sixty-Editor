@@ -24,6 +24,7 @@
             AddConstant(new ConstantInfo<Operator>("-", "-"));
             AddConstant(new ConstantInfo<Operator>("*", "*"));
             AddConstant(new ConstantInfo<Operator>("/", "/"));
+            AddConstant(new ConstantInfo<Operator>("%", "%"));
         }
 
         public static implicit operator Operator(string value)

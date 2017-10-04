@@ -2,7 +2,7 @@
 {
     public class DoNothing : Action
     {
-        public override string Template { get { return "DoNothing"; } }
+        public override string Template { get { return "Do nothing"; } }
 
         public override void Execute()
         {

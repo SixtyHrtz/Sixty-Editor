@@ -4,18 +4,18 @@ namespace Sixty_Editor_DLL
 {
     public class Wait : Action
     {
-        public override string Template { get { return "Wait(@a)"; } }
+        public override string Template { get { return "Wait (@Value)"; } }
 
-        private Float a = new Float(name: "a");
+        private Float value = new Float(name: "Value");
 
         public Wait()
         {
-            SetExpressions(a);
+            SetExpressions(value);
         }
 
         public override void Execute()
         {
-            Task.Delay((int)(a * 1000)).Wait();
+            Task.Delay((int)(value * 1000)).Wait();
         }
     }
 }

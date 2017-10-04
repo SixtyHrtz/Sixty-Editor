@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="MathSE.cs" />
     <Compile Include="Nodes\Method\Actions\Types\DoNothing.cs" />
+    <Compile Include="Nodes\Method\Actions\Types\TestAction.cs" />
     <Compile Include="Nodes\Method\Actions\Types\Wait.cs" />
     <Compile Include="Nodes\Expressions\Types\Boolean.cs" />
     <Compile Include="Nodes\Expressions\Types\Float.cs" />
@@ -44,10 +45,17 @@
     <Compile Include="Nodes\Expressions\Types\String.cs" />
     <Compile Include="Nodes\Method\Functions\Function.cs" />
     <Compile Include="Nodes\Method\Functions\IFunction.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\FloatToInteger.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\Max.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\Sign.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\StringLength.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\StringToInteger.cs" />
     <Compile Include="Nodes\Method\Functions\Types\Logic\And.cs" />
-    <Compile Include="Nodes\Method\Functions\Types\Math\Abs.cs" />
-    <Compile Include="Nodes\Method\Functions\Types\Math\Arithmetic.cs" />
-    <Compile Include="Nodes\Method\Functions\Types\Math\Random.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\Abs.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\Arithmetic.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\RandomNumber.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\String\ConcatenateStrings.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\String\Substring.cs" />
     <Compile Include="Nodes\Method\Method.cs" />
     <Compile Include="Nodes\NodesInfo\ConstantInfo.cs" />
     <Compile Include="Nodes\Expressions\Expression.cs" />
@@ -59,7 +67,7 @@
     <Compile Include="Nodes\Expressions\Types\Integer.cs" />
     <Compile Include="Nodes\Method\Actions\Action.cs" />
     <Compile Include="Nodes\NodesInfo\FunctionInfo.cs" />
-    <Compile Include="Nodes\Method\Functions\Types\Math\Min.cs" />
+    <Compile Include="Nodes\Method\Functions\Types\Integer\Min.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

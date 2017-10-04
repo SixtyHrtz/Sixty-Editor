@@ -18,7 +18,7 @@ namespace Sixty_Editor_WinForms
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {
-            action = new DisplayMessage();
+            action = new TestAction();
 
             actionLinkList = new List<LinkLabel>();
 
